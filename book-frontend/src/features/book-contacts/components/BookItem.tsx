@@ -19,7 +19,7 @@ const ProductItem: React.FC<Props> = ({id, author, message, image}) => {
   return (
     <Grid item sx={{width: '300px'}} key={id}>
       <Card sx={{height: '100%'}}>
-        <CardHeader title={author}/>
+        <CardHeader title={author ? author : 'Аноним' }/>
         <CardContent>
           <strong>{message}</strong>
         </CardContent>

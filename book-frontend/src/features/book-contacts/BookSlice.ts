@@ -45,10 +45,11 @@ export const BookSlice = createSlice({
   },
   selectors: {
     selectContacts: (state) => state.items,
-    selectFetching: (state) => state.isFetching
+    selectFetching: (state) => state.isFetching,
+    selectLoading: (state) => state.isLoading
   }
 });
 
 export const BookReducer = BookSlice.reducer;
 
-export const {selectContacts, selectFetching} = BookSlice.selectors;
+export const {selectContacts, selectFetching,selectLoading} = BookSlice.selectors;
