@@ -1,4 +1,4 @@
-import {AppBar, styled, Toolbar, Typography} from '@mui/material';
+import {AppBar, createTheme, styled, ThemeProvider, Toolbar, Typography} from '@mui/material';
 
 const StyledLink = styled('p')({
   color: 'inherit',
@@ -8,8 +8,18 @@ const StyledLink = styled('p')({
   },
 });
 
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+    primary: {
+      main: '#1976d2',
+    },
+  },
+});
+
 const AppToolbar = () => {
   return (
+    <ThemeProvider theme={darkTheme}>
     <AppBar position="sticky" sx={{mb: 2}}>
       <Toolbar>
         <Typography variant="h6" component="div" sx={{flexGrow: 1}}>
@@ -17,6 +27,7 @@ const AppToolbar = () => {
         </Typography>
       </Toolbar>
     </AppBar>
+    </ThemeProvider>
   );
 };
 
