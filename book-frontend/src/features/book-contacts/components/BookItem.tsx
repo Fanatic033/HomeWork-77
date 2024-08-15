@@ -1,27 +1,20 @@
 import React from 'react';
 import {Card, CardContent, CardHeader, CardMedia, Grid, styled} from '@mui/material';
 
-
 const ImageCardMedia = styled(CardMedia)({
   height: 0,
   paddingTop: '56.25%',
 });
 
 interface Props {
-  id: string
+  id: string;
   author: string;
   message: string;
   image: string | null;
 }
 
-const ProductItem: React.FC<Props> = ({id,author, message, image}) => {
+const ProductItem: React.FC<Props> = ({id, author, message, image}) => {
   const baseURL = 'http://localhost:8000';
-
-  let cardImage;
-
-  if (image) {
-    cardImage = `${baseURL}/${image}`;
-  }
 
   return (
     <Grid item sx={{width: '300px'}} key={id}>
@@ -30,7 +23,9 @@ const ProductItem: React.FC<Props> = ({id,author, message, image}) => {
         <CardContent>
           <strong>{message}</strong>
         </CardContent>
-        <ImageCardMedia image={cardImage}/>
+        {image && (
+          <ImageCardMedia image={`${baseURL}/${image}`} />
+        )}
       </Card>
     </Grid>
   );

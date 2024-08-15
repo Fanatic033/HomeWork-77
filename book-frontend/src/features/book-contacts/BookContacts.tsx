@@ -11,7 +11,7 @@ const BooksContacts = () => {
 
   useEffect(() => {
     dispatch(fetchBooks());
-  }, [dispatch]);
+  }, [dispatch,fetchBooks]);
 
   return (
     <Grid container direction="column" spacing={2}>

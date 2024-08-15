@@ -1,17 +1,19 @@
 import {Imessage} from '../../types.ts';
 import {createSlice} from '@reduxjs/toolkit';
-import {fetchBooks} from './BookThunks.ts';
+import {createMessage, fetchBooks} from './BookThunks.ts';
 
 export interface BookState {
   items: Imessage[],
   message: Imessage | null,
   isLoading: boolean,
+  isFetching: boolean,
 }
 
 const initialState: BookState = {
   items: [],
   message: null,
   isLoading: false,
+  isFetching: false,
 };
 
 export const BookSlice = createSlice({
@@ -30,12 +32,23 @@ export const BookSlice = createSlice({
       .addCase(fetchBooks.rejected, (state) => {
         state.isLoading = false;
       });
+    builder
+      .addCase(createMessage.pending, (state) => {
+        state.isFetching = true;
+      })
+      .addCase(createMessage.fulfilled, (state) => {
+        state.isFetching = false;
+      })
+      .addCase(createMessage.rejected, (state) => {
+        state.isFetching = false;
+      });
   },
   selectors: {
     selectContacts: (state) => state.items,
+    selectFetching: (state) => state.isFetching
   }
 });
 
 export const BookReducer = BookSlice.reducer;
 
-export const {selectContacts} = BookSlice.selectors;
+export const {selectContacts, selectFetching} = BookSlice.selectors;
