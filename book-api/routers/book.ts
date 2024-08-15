@@ -1,6 +1,7 @@
 import express from 'express';
 import fileDb from '../fileDb';
 import {MessageMutation} from '../types';
+import {imagesUpload} from '../multer';
 
 const messageRouter = express.Router();
 
@@ -10,7 +11,7 @@ messageRouter.get('/', async (req, res) => {
   return res.send(posts);
 });
 
-messageRouter.post('/', async (req, res) => {
+messageRouter.post('/', imagesUpload.single('image'), async (req, res) => {
   if (!req.body.message) {
     return res.status(400).send({error: 'Message is missing'});
   }
