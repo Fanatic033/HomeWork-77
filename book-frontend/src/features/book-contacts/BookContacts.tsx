@@ -31,7 +31,7 @@ const BooksContacts = () => {
         <Grid item>
         </Grid>
       </Grid>
-      <Grid item container spacing={1}>
+      <Grid item container spacing={1} sx={{display:'flex', justifyContent: 'center',gap: 3}}>
         {contacts.map((contact) => (
           <BookItem
             key={contact.id}

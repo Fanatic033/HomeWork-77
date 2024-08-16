@@ -1,5 +1,5 @@
-import React, { useRef, useState } from 'react';
-import { Button, Grid, TextField } from '@mui/material';
+import React, {useRef, useState} from 'react';
+import {Button, Grid, TextField} from '@mui/material';
 
 interface Props {
   onChange: React.ChangeEventHandler<HTMLInputElement>;
@@ -23,7 +23,6 @@ const InputFile: React.FC<Props> = ({ onChange, name, label }) => {
     } else {
       setFilename('');
     }
-
     onChange(e);
   };
 

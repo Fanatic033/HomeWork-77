@@ -1,20 +1,14 @@
 [
   {
-    "author": "ilzat",
-    "message": "hello",
-    "image": null,
-    "id": "e0995ab9-e094-430b-9786-d101866a22e7"
+    "author": "Ilzat",
+    "message": "I Love Mountain !!",
+    "image": "images/cf70a763-ac95-44c2-8e2f-856282837c0a.jpg",
+    "id": "0de56151-3e35-4880-a2aa-c3e71ad4b295"
   },
   {
     "author": "",
-    "message": "lady bug",
-    "image": "images/97c8afe4-7ba4-47c0-bc4b-a46032339c44.png",
-    "id": "d1205024-db19-47cf-984a-d0842b46c0fa"
-  },
-  {
-    "author": "",
-    "message": "FISH",
-    "image": "images/28d29f79-d1bc-404f-802c-4065dcd99f67.png",
-    "id": "444ddd74-4af9-413a-a482-229813a4cd33"
+    "message": "Аноним",
+    "image": "images/dfed404f-90ff-4aaf-8ba9-dd1273426a78.jpg",
+    "id": "03db5826-cc61-4829-84b3-7214eb3a081a"
   }
 ]

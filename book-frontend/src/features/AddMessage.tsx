@@ -22,7 +22,7 @@ const AddMessage = () => {
 
   const onFormSubmit = async (messageMutation: MessageMutation) => {
     await dispatch(createMessage(messageMutation));
-    await dispatch(fetchBooks())
+    await dispatch(fetchBooks());
     closeModal();
   };
 

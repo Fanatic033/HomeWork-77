@@ -20,6 +20,7 @@ const BookForm: React.FC<Props> = ({onSubmit, isLoading}) => {
   const submitFormHandler = (event: React.FormEvent) => {
     event.preventDefault();
     onSubmit({...state});
+    setState({author: '', message: '', image: null});
   };
 
   const inputChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {

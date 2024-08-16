@@ -1,8 +1,9 @@
 import React from 'react';
-import {Card, CardContent, CardHeader, CardMedia, Grid, styled} from '@mui/material';
+import {Avatar, Card, CardContent, CardHeader, CardMedia, Grid, styled} from '@mui/material';
 
 const ImageCardMedia = styled(CardMedia)({
-  height: 0,
+  component: 'img',
+  height: '194px',
   paddingTop: '56.25%',
 });
 
@@ -18,13 +19,22 @@ const ProductItem: React.FC<Props> = ({id, author, message, image}) => {
 
   return (
     <Grid item sx={{width: '300px'}} key={id}>
-      <Card sx={{height: '100%'}}>
-        <CardHeader title={author ? author : 'Аноним' }/>
+      <Card sx={{height: '100%',padding: '10px'}} variant="outlined">
+        <CardHeader
+          avatar={
+            <Avatar sx={{ bgColor: 'red' }} aria-label="recipe">
+              {author[0]}
+            </Avatar>
+          }
+          title={author ? author : 'Аноним' }
+        />
         <CardContent>
           <strong>{message}</strong>
         </CardContent>
         {image && (
-          <ImageCardMedia image={`${baseURL}/${image}`} />
+          <ImageCardMedia
+            image={`${baseURL}/${image}`}
+          />
         )}
       </Card>
     </Grid>
